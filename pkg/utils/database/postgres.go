@@ -270,7 +270,7 @@ func (p Postgres) checkSchemas() error {
 }
 
 func (p Postgres) deleteDatabase(admin AdminCredentials) error {
-	revoke := fmt.Sprintf("REVOKE CONNECT ON DATABASE \"%s\" FROM PUBLIC, \"%s\";", p.Database, admin.Username)
+	revoke := fmt.Sprintf("REVOKE CONNECT ON DATABASE \"%s\" FROM PUBLIC;", p.Database)
 	delete := fmt.Sprintf("DROP DATABASE \"%s\";", p.Database)
 
 	if p.isDbExist(admin) {
