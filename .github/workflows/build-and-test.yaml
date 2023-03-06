@@ -23,10 +23,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Check Code Style
-        uses: golangci/golangci-lint-action@v2
+        uses: golangci/golangci-lint-action@v3
         with:
-          version: v1.49.0 ## https://github.com/golangci/golangci-lint/releases
-          args: --timeout 3m0s
+          version: v1.51.2
 
   unit-test:
     runs-on: ubuntu-latest
